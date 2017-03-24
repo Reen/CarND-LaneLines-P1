@@ -262,6 +262,8 @@ class KalmanFilter(object):
         self.R = np.diag([0.02, 1000])               # measurement uncertainty
         self.Q = np.array([[0.001, 0],[0, 10]])      # process noise
 
+    # kalman filter taken and adapted from book "Kalman and Bayesian Filters in Python" by Roger R. Labbe 
+    # https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/
     def predict_and_update(self, z):
         # predict
         self.x = np.dot(self.F, self.x)
